@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var proc=require('child_process').spawn;
 var bot=new (require('net')).Socket();
 
@@ -25,7 +27,7 @@ bot.on('data', function(data){
 	if (command=="notifytextmessage"&&params.msg[0]==delim){
 		var usermsg=formatfrom(params.msg).trim().split(" ");
 		var usercommand=usermsg.shift().substring(1).toLowerCase();
-		
+
 		var context={
 			args: usermsg,
 			bot: bot,
@@ -34,7 +36,7 @@ bot.on('data', function(data){
 			from: params.invokername,
 			playing: playing
 		}
-		
+
 		if (playing){
 			try{
 				require('./playing/'+usercommand)(context);
