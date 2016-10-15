@@ -1,0 +1,3 @@
+# Node specific directories and files
+node_modules
+npm-debug.log

@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/EnKrypt/TeamSpeakBot/issues"
   },
-  "homepage": "https://github.com/EnKrypt/TeamSpeakBot#readme"
+  "homepage": "https://github.com/EnKrypt/TeamSpeakBot#readme",
+  "dependencies": {
+    "youtube-dl": "^1.11.1"
+  }
 }
