@@ -45,6 +45,6 @@ After that, you need to configure your machine's audio devices such that audio c
 
 That's it. Run a command and see if it works. If it does not, fix it yourself. This is something I made for my convenience, not yours. If you really want support, write a petition to the TeamSpeak developers to not code like a bunch of cunts and I'll turn this into a community project. You see all that bullshit confuration you had to do above to run a simple bot? Yeah that's all their fault for providing zero support for external development apart from a half baked ClientQuery protocol that's so old, it's almost reached the age of consent.
 
-Also note that mpv's support for youtube playback is a bit flaky. If you do not constantly keep updating to the latest version, the youtube urls may not always play.
+Also note that support for youtube playback is a bit flaky. You will need the [`youtube-dl`](https://rg3.github.io/youtube-dl/) program installed (mpv will automatically plug into it) and it **needs** to be up to date. If you do not constantly keep updating to the latest version, the urls may not play whenever youtube changes its structure or protocols.
 
 If you don't want to use mpv, you can edit `commands/play.js` if you'd like to use something else. You will also have to change the shortcuts used in `seek.js`, `speed.js` and `volume.js` in the `playing` directory.
