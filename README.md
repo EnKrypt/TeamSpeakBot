@@ -28,7 +28,13 @@ First install TeamSpeakBot with npm
 $ npm install -g teamspeakbot
 ```
 
-Then run TeamSpeakBot on the command line
+Change permission of youtube-dl binary (You currently **have** to do this to play youtube urls unless you're cloning or installing locally. I've submitted an issue in the meantime expressing my frustration at this requirement)
+
+```
+$ sudo chmod 755 /usr/local/lib/node_modules/teamspeakbot/node_modules/youtube-dl/bin/youtube-dl
+```
+
+Finally run TeamSpeakBot on the command line
 
 ```
 $ teamspeakbot

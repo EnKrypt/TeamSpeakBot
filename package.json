@@ -1,6 +1,6 @@
 {
   "name": "teamspeakbot",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A TeamSpeak bot in javascript to manage playing audio and music using commands",
   "main": "bot.js",
   "bin": "bot.js",

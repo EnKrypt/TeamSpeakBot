@@ -6,7 +6,7 @@ module.exports=function(context){
         if ((context.args[0]||" ").indexOf("youtube.com")!=-1 || (context.args[0]||" ").indexOf("youtu.be")!=-1) {
             youtubedl.getInfo(url, [], function(err, info) {
                 if (err) {
-                    throw new Error('youtube-dl error: ', err.stack);
+                    console.log('youtube-dl error: ', err.stack);
                 } else {
                     context.callback({
                         command: "mpv",
