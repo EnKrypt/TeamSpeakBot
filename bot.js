@@ -34,7 +34,18 @@ bot.on('data', function(data){
 			command: usercommand,
 			ex: ex,
 			from: params.invokername,
-			playing: playing
+			playing: playing,
+            callback: function(resargs) {
+                ex=proc(resargs.command, resargs.args, {
+                    stdio: ['pipe', 'ignore', 'ignore']
+                });
+                playing=true;
+                console.log(params.invokername+": "+usercommand+" "+usermsg.join(" ")+" \nCOMMAND: "+resargs.command+" "+resargs.args.join(" "));
+                ex.on('exit', function(){
+                    playing=false;
+                    console.log("Stopped playback");
+                });
+            }
 		}
 
 		if (playing){
@@ -48,16 +59,7 @@ bot.on('data', function(data){
 		}
 		else{
 			try{
-				var resargs=require('./commands/'+usercommand)(context);
-				ex=proc(resargs.command, resargs.args, {
-					stdio: ['pipe', 'ignore', 'ignore']
-				});
-				playing=true;
-				console.log(params.invokername+": "+usercommand+" "+usermsg.join(" ")+" \nCOMMAND: "+resargs.command+" "+resargs.args.join(" "));
-				ex.on('exit', function(){
-					playing=false;
-					console.log("Stopped playback");
-				});
+				require('./commands/'+usercommand)(context);
 			}
 			catch(e){
 				send(params.invokername+": "+((e.message.trim().toLowerCase().startsWith("cannot find module"))?usercommand+" is not a valid command":e.message));
