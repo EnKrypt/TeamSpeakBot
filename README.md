@@ -1,6 +1,10 @@
 TeamSpeakBot
 ==
 
+[![NPM-Version](https://img.shields.io/npm/v/teamspeakbot.svg)](npmjs.com/package/teamspeakbot)
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/EnKrypt/teamspeakbot/master/LICENSE)
+
 A TeamSpeak bot in javascript to manage playing audio and music using commands
 
 ## Introduction
