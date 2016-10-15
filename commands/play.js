@@ -2,7 +2,7 @@ module.exports=function(context){
 	if (context.command!="play"||(context.args[0]||" ").startsWith("http")){
 		return {
 			command: "mpv",
-			args: ["-volume", "50", "--no-video", "--quiet", context.args[0]]
+			args: ["--input-terminal", "-volume=50", "--no-video", "--quiet", context.args[0]]
 		};
 	}
 	else{
