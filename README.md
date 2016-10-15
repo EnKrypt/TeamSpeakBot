@@ -5,9 +5,12 @@ TeamSpeakBot
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/EnKrypt/teamspeakbot/master/LICENSE)
 
-A TeamSpeak bot in javascript to manage playing audio and music using commands
+A TeamSpeak bot in javascript to manage playing audio and music using commands.
 
 ## Introduction
+
+If you've come here because a bot is already running and you want to know how to use it, [click here for the list of commands.](http://pastebin.com/raw/u3ZH5mrB)  
+The rest of this README will assume that you need help getting the bot itself up and running.
 
 *Note: This bot is not a TeamSpeak client itself. You have to have one running alongside it.*
 
@@ -31,7 +34,7 @@ Then run TeamSpeakBot on the command line
 $ teamspeakbot
 ```
 
-You can also clone this repository and run `bot.js` with node. Whatever works for you.
+You can also clone this repository and run `bot.js` with node. Whatever works for you. (Make sure to install dependencies in this case with `npm install`)
 
 Next, you need to install [`mpv`](https://mpv.io/) which is the software that will be invoked to play all the audio. Installing just the command line version will work fine.
 
@@ -49,6 +52,6 @@ After that, you need to configure your machine's audio devices such that audio c
 
 That's it. Run a command and see if it works. If it does not, fix it yourself. This is something I made for my convenience, not yours. If you really want support, write a petition to the TeamSpeak developers to not code like a bunch of cunts and I'll turn this into a community project. You see all that bullshit confuration you had to do above to run a simple bot? Yeah that's all their fault for providing zero support for external development apart from a half baked ClientQuery protocol that's so old, it's almost reached the age of consent.
 
-Also note that support for youtube playback is a bit flaky. You will need the [`youtube-dl`](https://rg3.github.io/youtube-dl/) program installed (mpv will automatically plug into it) and it **needs** to be up to date. If you do not constantly keep updating to the latest version, the urls may not play whenever youtube changes its structure or protocols.
+Also note that support for youtube playback is a bit flaky. It uses [`youtube-dl`](https://github.com/fent/node-youtube-dl) behind the scene as a npm dependency and it **needs** to be up to date. If you do not constantly keep updating to the latest version, the urls may not play whenever youtube changes its structure or protocols.
 
 If you don't want to use mpv, you can edit `commands/play.js` if you'd like to use something else. You will also have to change the shortcuts used in `seek.js`, `speed.js` and `volume.js` in the `playing` directory.
